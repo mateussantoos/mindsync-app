@@ -3,20 +3,13 @@ import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-nativ
 import { BottomNavigation } from 'components/ui/BottomNavigation';
 import { Container } from 'components/Container';
 import { Ionicons } from '@expo/vector-icons';
+import { TopBar } from 'components/ui/TopBar';
 
 export const HomeScreen = () => {
   return (
     <Container>
       {/* Top Bar */}
-      <View className="mb-4 flex-row items-center justify-between">
-        <View className="h-10 w-10 items-center justify-center rounded-full bg-gray-700">
-          <Text className="font-bold text-white">M</Text>
-        </View>
-        <Text className="text-xl font-bold text-white">
-          Mind<Text className="text-blue-500">Sync</Text>
-        </Text>
-        <Ionicons name="menu" size={24} color="white" />
-      </View>
+      <TopBar />
 
       {/* Search Bar */}
       <View className="mb-4 rounded-xl bg-gray-800 p-3">

@@ -1,7 +1,15 @@
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Platform, StatusBar } from 'react-native';
 
 export const Container = ({ children }: { children: React.ReactNode }) => {
-  return <SafeAreaView className={styles.container}>{children}</SafeAreaView>;
+  return (
+    <SafeAreaView
+      className={styles.container}
+      style={{
+        paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 30 : 60, // aumenta o espaço
+      }}>
+      {children}
+    </SafeAreaView>
+  );
 };
 
 const styles = {
